@@ -112,6 +112,11 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_PATH,'templates/css'),
+    os.path.join(PROJECT_PATH,'templates/js'),
+    os.path.join(PROJECT_PATH,'templates/images'),
+)
 # Profiles configuration
 AUTH_PROFILE_MODULE = 'profiles.Profile'
 
