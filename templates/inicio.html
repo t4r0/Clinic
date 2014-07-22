@@ -1,12 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 	 <title>{% block tittle %} {% endblock %}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}main.css">
-        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}custom.css"/>        
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}custom.css"/>  
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}normalize.css"/>              
         <script src="{{STATIC_URL}}vendor/modernizr-2.6.2.min.js"></script>
         <script src="{{STATIC_URL}}vendor/jquery-1.10.1.min.js"></script>
         <script src="{{STATIC_URL}}vendor/ajax.js"></script>
@@ -22,12 +23,15 @@
             <div class="giganto">
                 <div class="headland">
                     <p class="big-tittle">
-                    A nosotros también nos importa la salud de tus pacientes.
+                    A nosotros también nos importa la salud de sus pacientes.
+                    </p>
+                    <p class="big-info">
+                    	Brindeles una atención más personalizada con <i class="medium-info">Instant appointment</i>
                     </p>
                 </div>              
             </div>
 	</section>
-	<section id="content">
+	<section id="content" class="blue-headline">
 		<div>
 		</div>
 	</section>
