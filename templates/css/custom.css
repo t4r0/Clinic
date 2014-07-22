@@ -9,7 +9,7 @@ body, .big-banner, .bar, p
 }
 .big-banner
 {
-	background-image: url(../images/doctor.jpg);
+	background-image: url('doctor.jpg');
         height: 450px;
 }
 
@@ -33,6 +33,6 @@ body, .big-banner, .bar, p
 
 .headland
 {
-    width: 80%;
+    width: 55%;
     padding: 10%  15% 10% 5%;
 }
