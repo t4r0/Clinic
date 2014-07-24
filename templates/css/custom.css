@@ -10,6 +10,18 @@ body, .big-banner, .bar, p
     height: 12%;
 }
 
+.bar > div
+{
+	height: 100%;
+	width: 33%;
+	float: left;
+}
+
+.bar > .lefty
+{
+	width:66%;
+}
+
 .big-banner, .bar, .giganto
 {
     width: 100%;    
@@ -59,4 +71,11 @@ body, .big-banner, .bar, p
 .medium-info
 {
 	font-size:22pt;
+}
+
+.red-button
+{
+	color: white;
+	background-color: #ff1c1c;
+	border-style:none;
 }

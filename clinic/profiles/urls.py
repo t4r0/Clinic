@@ -9,5 +9,7 @@ from profiles import views
 
 
 urlpatterns = patterns('', 
-                       url(r'^$', views.main, name='home')
+                       url(r'^$', views.main, name='home'),
+                         url(r'^Login/', 'django.contrib.auth.views.login',
+                            {'template_name':'profiles/login.html'}, name = 'login')
                        )

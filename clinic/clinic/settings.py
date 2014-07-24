@@ -115,8 +115,14 @@ STATICFILES_FINDERS = (
 STATICFILES_DIRS = (
     os.path.join(PROJECT_PATH,'templates/css'),
     os.path.join(PROJECT_PATH,'templates/js'),
-    os.path.join(PROJECT_PATH,'templates/images'),
+    os.path.join(PROJECT_PATH,'templates/images'), 
+    os.path.join(PROJECT_PATH,'templates/js/vendor'),
 )
 # Profiles configuration
 AUTH_PROFILE_MODULE = 'profiles.Profile'
 
+from django.core.urlresolvers import reverse_lazy
+
+LOGIN_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
+LOGIN_REDIRECT_URL = reverse_lazy('/')
