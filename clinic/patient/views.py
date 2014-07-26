@@ -1,15 +1,16 @@
 # Create your views here.
 
-from django.http import Http404,HttpResponseRedirect
+from django.shortcuts import render, render_to_response, Http404
+from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 def viewProfile(request,cui):
-    user = User()
+    patient = Patient()
     try:
-        user = User.objects.get(cui=cui)
-        if user == request.user:
-            return HttpResponseRedirect('/patient/'+cui)
+        patient = Patient.objects.get(cui=cui)
+        if patient == request.patient:
+            return render_to_response('/patient/'+cui)
         except User.DoesNotExist:
             raise Http404
         return render(request)
