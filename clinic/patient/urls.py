@@ -8,7 +8,8 @@ from django.conf.urls import patterns, url
 from patient import views
 
 
-urlpatterns = patterns('', 
-                      
+urlpatterns = patterns('',
+                       url(r'^patient/(?P<cui>\d+)/$',views.viewProfile),
+                       
                        #url(r'^signup/$', views.sign_up, name='signup'),
                        )
