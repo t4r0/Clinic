@@ -9,6 +9,6 @@ class profile(models.Model):
     address = models.CharField(max_length=100, null=True, blank=True)
     emergency_phone = models.CharField(max_length=20, null =True, blank=True)
     active = models.BooleanField(blank=True)
-    
+    reference_number=models.CharField(max_length=10, blank=False)
     def __unicode__(self):
         return self.user.username

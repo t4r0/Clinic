@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-	 <title>{% block tittle %} {% endblock %}</title>
+	 <title>Home</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}main.css">
@@ -14,17 +14,17 @@
     </head>
 	<body>
 	<section id="home" class="big-banner">
-            <div class="bar">
-            	<div class="lefty">
-            	</div>
-				<div>
-					<a href="/login">Iniciar Sesion </a>
-				</div>
-				<div>
-					<a href="/signup">Registrarse </a>
-				</div>
-            </div>
-            <div class="giganto">
+            <nav class="bar navbar" role="navigation">
+            	<ul class="navbar-right navbar-nav">
+            	{% if user.is_authenticated %}            	
+            		<li><a class="red-button" href = "/logout"> Salir </a></li>
+				{% else %}
+					<li><a href="/signup">Registrarse </a></li>
+					<li><a class="red-button" href="/login">Iniciar Sesion </a></li>					
+				{% endif %}
+				</ul>
+            </nav>
+            <div class="jumbottron giganto">
                 <div class="headland">
                     <p class="big-tittle">
                     A nosotros también nos importa la salud de sus pacientes.
@@ -32,6 +32,10 @@
                     <p class="big-info">
                     	Brindeles una atención más personalizada con <i class="medium-info">Instant appointment</i>
                     </p>
+                    <div>
+					<a class="blue-button" href="#">Iniciar Ahora </a>
+					<a class="white-button" href="#">Explora mas</a>
+				</div>
                 </div>              
             </div>
 	</section>

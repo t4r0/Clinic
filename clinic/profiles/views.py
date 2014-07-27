@@ -1,11 +1,9 @@
-from django.shortcuts import render, render_to_response, Http404
+from django.shortcuts import render_to_response, Http404
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-# Create your views here.
-def main(request):
-    return render(request, 'inicio.html',{})
-    
+# Create your views here.    
+
 @login_required
 def profile(request, user_name):
     user = User()

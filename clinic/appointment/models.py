@@ -7,7 +7,7 @@ class appointment(models.Model):
     doctor = models.ForeignKey(profile)
     date = models.DateField()
     hour = models.TimeField(unique_for_date='date')
-    reason = models.SlugField(default='consulta de rutina',blank=True)
+    reason = models.CharField(max_length=40, default='consulta de rutina',blank=True)
     
     def __unicode__(self):
         return str(self.date) + str(self.hour)
