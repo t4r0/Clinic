@@ -1,0 +1,19 @@
+{{patient.cui}}
+{{patient.getfullname}}
+{{patient.getStatus}}
+{{patient.getattendant}}
+{{patient.date_of_birth}}
+{{patient.adress}}
+{{patient.phone}}
+{{patient.gender}}
+{{patient.email}}
+{%for consultation in consultation%}
+    {{consultation.date}}
+    {{consultation.getObservation}}
+    {{consultation.getSymptoms}}
+    {{consultation.physicaltest.getSize}}
+    {{consultation.physicaltest.getWeight}}
+    {{consultation.physicaltest.getPressure}}
+    {{consultation.physicaltest.getHeartRate}}
+    {{consultation.diagnostic.getPathology}}
+{%endfor%}

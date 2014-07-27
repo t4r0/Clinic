@@ -28,6 +28,10 @@ class attendant(models.Model):
     def __unicode__(self):
         return str(self.cui)
 
+    def getfullname(self):
+        return str(self.name)+str(self.last_name)
+
+    
 class patient(models.Model):
     """
     Clase que alamacena los datos de un paciente
@@ -47,4 +51,11 @@ class patient(models.Model):
     def __unicode__(self):
         return str(self.cui)
 
-    
+    def getfullname(self):
+        return str(self.name)+str(self.last_name)
+
+    def getattendant(self):
+        return str(self.attendant.getfullname)
+
+    def getStatus(self):
+        return str(self.status)

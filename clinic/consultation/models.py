@@ -15,6 +15,12 @@ class consultation(models.Model):
     observation = models.TextField()
     symptoms = models.TextField()
     patient = models.ForeingKey(patient)
+
+    def getObservation(self):
+        return str(self.observation)
+
+    def getSymptoms(self):
+        return str(self.symptoms)
     
 
 class physicaltest(models.Model):
@@ -23,8 +29,23 @@ class physicaltest(models.Model):
     pressure = models.CharField(max_length=20,blank=False)
     temperature = models.CharField(max_length=12)
     heartrate = models.CharField(max_length=12)
-    consultation = models.ForeingKey(consultation)
+    consultation = models.OneToOneField(consultation,related_name='physicaltest')
+
+    def getSize(self):
+        return str(self.size)
+
+    def getWeight(self):
+        return str(self.weight)
+
+    def getPressure(self):
+        return str(self.pressure)
+    
+    def getHeartRate(self):
+        return str(self.heartrate)
 
 class diagnostic(models.Model):
     pathology = models.ForeingKey(pathology)
-    consultation = models.ForeingKey(consultation)
+    consultation = models.OneToOneField(consultation,related_name='diagnostic')
+
+    def getPathology(self):
+        return str(self.pathology)
