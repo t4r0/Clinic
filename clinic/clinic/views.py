@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, render_to_response
+from django.template import RequestContext
 from django.contrib.auth.models import User
+import forms
 '''
 Created on 26/07/2014
 
@@ -13,4 +16,14 @@ def main(request):
     return render(request, 'inicio.html',{})
 
 def sign_up(request):
-    return render(request, 'profiles/signup.html',{})
+    if request.POST:
+        form = forms.SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/login/')
+        else:
+            return render_to_response('profiles/signUp.html',{'form':form}, context_instance=RequestContext(request))
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/')        
+    form = forms.SignUpForm()
+    return render(request, 'profiles/signup.html',{'form':form})

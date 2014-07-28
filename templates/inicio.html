@@ -5,8 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}main.css">
-        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}custom.css"/>  
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bootstrap.min.css">   
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}normalize.css"/>              
         <script src="{{STATIC_URL}}modernizr-2.6.2.min.js"></script>
         <script src="{{STATIC_URL}}jquery-1.10.1.min.js"></script>
@@ -14,27 +13,27 @@
     </head>
 	<body>
 	<section id="home" class="big-banner">
-            <nav class="bar navbar" role="navigation">
-            	<ul class="navbar-right navbar-nav">
+            <nav class="navbar navbar-default" role="navigation">
+            	<ul class="nav navbar-nav navbar-right">
             	{% if user.is_authenticated %}            	
-            		<li><a class="red-button" href = "/logout"> Salir </a></li>
+            		<li><a class="" href = "/logout"> Salir </a></li>
 				{% else %}
 					<li><a href="/signup">Registrarse </a></li>
-					<li><a class="red-button" href="/login">Iniciar Sesion </a></li>					
+					<li><a class="btn btn-danger" href="/login">Iniciar Sesion </a></li>					
 				{% endif %}
 				</ul>
             </nav>
-            <div class="jumbottron giganto">
-                <div class="headland">
-                    <p class="big-tittle">
+            <div class="jumbotron">
+                <div>
+                    <h2>
                     A nosotros también nos importa la salud de sus pacientes.
-                    </p>
-                    <p class="big-info">
+                    </h2>
+                    <p class="">
                     	Brindeles una atención más personalizada con <i class="medium-info">Instant appointment</i>
                     </p>
                     <div>
-					<a class="blue-button" href="#">Iniciar Ahora </a>
-					<a class="white-button" href="#">Explora mas</a>
+					<a class="btn btn-primary custom-btn" href="#">Iniciar Ahora </a>
+					<a class="btn btn-default" href="#">Explora mas</a>
 				</div>
                 </div>              
             </div>

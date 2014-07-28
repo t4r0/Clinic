@@ -8,7 +8,7 @@ class profile(models.Model):
     telephone = models.CharField(max_length = 20, null=True, blank=True)
     address = models.CharField(max_length=100, null=True, blank=True)
     emergency_phone = models.CharField(max_length=20, null =True, blank=True)
-    active = models.BooleanField(blank=True)
-    reference_number=models.CharField(max_length=10, blank=False)
+    active = models.BooleanField(default=True,blank=True)
+    registration_number=models.CharField(max_length=10, blank=False)
     def __unicode__(self):
         return self.user.username
