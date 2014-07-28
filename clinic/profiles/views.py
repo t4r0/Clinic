@@ -6,11 +6,13 @@ from django.contrib.auth.models import User
 
 @login_required
 def profile(request, user_name):
-    user = User()
+    doctor = User()
     try:
-        user = User.objects.get(username = user_name)
+        doctor = User.objects.get(username = user_name)
+        if not doctor.profile.active:
+            raise Http404
     except User.DoesNotExist:
         raise Http404
     return render_to_response('profiles/profile.html',
-                              {'user': user, 'profile': user.profile},
+                              {'user_data': doctor, 'profile': doctor.profile},
                                context_instance=RequestContext(request))

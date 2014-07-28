@@ -7,19 +7,19 @@
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}main.css">
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bootstrap.min.css">   
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}normalize.css"/>              
-        <script src="{{STATIC_URL}}modernizr-2.6.2.min.js"></script>        
-        <script src="{{STATIC_URL}}ajax.js"></script>
+        <script src="{{STATIC_URL}}modernizr-2.6.2.min.js"></script>
+        <script src="{{STATIC_URL}}underscore-min.js"></script>
+		<script src="{{STATIC_URL}}admin/js/jquery.js"></script> 
+        <script src="{{STATIC_URL}}backbone-min.js"></script>       
+        <script src="{{STATIC_URL}}bootstrap.min.js"></script>                
     </head>
 	<body>
     	<nav class="navbar navbar-default" role="navigation">
+    	<a class="navbar-brand" href="/">Inicio</a>
 		<ul class="nav navbar-nav navbar-right">
-		{% if user.is_authenticated %}            	
-		<li><a class="" href = "/logout"> Salir </a></li>
-		<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span><span class="caret"></span></a>
-		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-  		</ul>
-  		</li>
+		{% if user.is_authenticated %}
+		<li><a href=/{{user.username}}> {{user.username}}</a></li>           	
+		<li><a class="" href = "/logout"> Salir </a></li>		
   		{% else %}
 					<li><a href="/signup">Registrarse </a></li>
 					<li><a href="/">Inicio</a></li>		

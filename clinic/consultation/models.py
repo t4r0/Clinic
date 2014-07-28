@@ -56,4 +56,4 @@ class diagnostic(models.Model):
         return str(self.pathology)
 
     def __unicode__(self):
-        return str(self.id)+str(self.consultation
+        return str(self.id)+str(self.consultation)
