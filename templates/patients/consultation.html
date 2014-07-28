@@ -1,25 +1,3 @@
-{{patient.cui}}
-{{patient.getfullname}}
-{{patient.getStatus}}
-{% if patient.attendant %}
-    {{patient.getattendant}}
-{% endif %}
-{{patient.date_of_birth}}
-{{patient.adress}}
-{{patient.phone}}
-{% if patient.gender = True %}
-    Mujer
-{% else %}
-    Hombre
-{% endif %}
-{{patient.email}}
-{%for consultation in consultation%}
-    {{consultation.date}}
-    {{consultation.getObservation}}
-    {{consultation.getSymptoms}}
-    {{consultation.physicaltest.getSize}}
-    {{consultation.physicaltest.getWeight}}
-    {{consultation.physicaltest.getPressure}}
-    {{consultation.physicaltest.getHeartRate}}
-    {{consultation.diagnostic.getPathology}}
-{%endfor%}
+<form role="form">
+    <div class="form-group">
+        
