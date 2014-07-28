@@ -1,25 +1,73 @@
-{{patient.cui}}
-{{patient.getfullname}}
-{{patient.getStatus}}
+{% extends "base.html" %}
+{% block tittle %}Informacion de Paciente{% endblock %}
+    
+{% block content %}
+
+<div class="container">
+<div class="container">
+<p class="bg-primary text-center">
+    Informacion del Paciente
+</p>
+<div class="jumbotron">
+    <div class="row">CUI: {{patient.cui}}</div>
+    <div class="row">Nombre: {{patient.getfullname}}</div>
+    <div class="row">Estado Civil: {{patient.getStatus}}</div>
 {% if patient.attendant %}
-    {{patient.getattendant}}
+    <div class="row">Encargado: {{patient.getattendant}}</div>
 {% endif %}
-{{patient.date_of_birth}}
-{{patient.adress}}
-{{patient.phone}}
+    <div class="row">Fecha de Nacimiento:{{patient.date_of_birth}}</div>
+    <div class="row">Direccion:{{patient.adress}}</div>
+    <div class="row">Telefono:{{patient.phone}}</div>
 {% if patient.gender = True %}
-    Mujer
+    <div class="row">Genero: Mujer</div>
 {% else %}
-    Hombre
+    <div class="row">Genero: Hombre</div>
 {% endif %}
-{{patient.email}}
+    <div class="row">Correo: {{patient.email}}</div>
+</div>
+</div>
+
+<div class="container">
+<p class="bg-primary text-center">
+    Consultas
+</p>
+<div class="jumbotron">
 {%for consultation in consultation%}
-    {{consultation.date}}
-    {{consultation.getObservation}}
-    {{consultation.getSymptoms}}
-    {{consultation.physicaltest.getSize}}
-    {{consultation.physicaltest.getWeight}}
-    {{consultation.physicaltest.getPressure}}
-    {{consultation.physicaltest.getHeartRate}}
-    {{consultation.diagnostic.getPathology}}
+<div class="row">
+<div class="container">
+<div class="row">
+    <span class="label label-primary">Consulta: {{consultation.date}}</span>
+</div>
+<div class="row">
+    Observaciones: {{consultation.getObservation}}</div>
+<div class="row">
+    Sintomas: {{consultation.getSymptoms}}</div>
+{% if consultation.physicaltest %}
+    <div class="row"> <span class="label label-default">Examen Fisico</span></div>
+<div class="row">
+    Talla: {{consultation.physicaltest.getSize}}</div>
+<div class="row">
+    Peso: {{consultation.physicaltest.getWeight}}</div>
+<div class="row">
+    Presion: {{consultation.physicaltest.getPressure}}</div>
+<div class="row">
+    Frecuencia Cardiaca: {{consultation.physicaltest.getHeartRate}}</div>
+<div class="row">
+    Temperatura: {{consultation.physicaltest.getTemperature}}</div>
+{% endif %}
+    <div class="row"> <span class="label label-default">Diagnostico</span></div>
+<div class="row">
+    Patologia: {{consultation.diagnostic.getPathology}}</div>
+</div>
+</div>
 {%endfor%}
+</div>
+</div>
+
+<div class="row">
+    <a href="patients/consultation.html"><button class="btn btn-primary btn-default">
+ <span class="glyphicon glyphicon-plus"></span>   Ingresar Consulta
+        </button></a>
+</div>
+</div>
+{% endblock %}

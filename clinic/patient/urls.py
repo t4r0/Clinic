@@ -10,4 +10,5 @@ from patient import views
 
 urlpatterns = patterns('',
                        url(r'^(?P<cui>\d+)/$',views.viewProfile),
+                       url(r'^consultation/$',views.addConsultation),
                        )

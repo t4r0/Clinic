@@ -45,6 +45,9 @@ class physicaltest(models.Model):
     def getHeartRate(self):
         return str(self.heartrate)
 
+    def getTemperature(self):
+        return str(self.temperature)
+
     def __unicode__(self):
         return str(self.id)+str(self.consultation)
 
@@ -57,3 +60,7 @@ class diagnostic(models.Model):
 
     def __unicode__(self):
         return str(self.id)+str(self.consultation)
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
