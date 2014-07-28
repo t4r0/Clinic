@@ -29,7 +29,7 @@ class attendant(models.Model):
         return str(self.cui)
 
     def getfullname(self):
-        return str(self.name)+str(self.last_name)
+        return str(self.name)+ ' ' +str(self.last_name)
 
     
 class patient(models.Model):
@@ -49,13 +49,13 @@ class patient(models.Model):
    
 
     def __unicode__(self):
-        return str(self.cui)
+        return unicode(self.cui)
 
     def getfullname(self):
-        return str(self.name)+str(self.last_name)
+        return unicode(self.name)+' ' + unicode(self.last_name)
 
     def getattendant(self):
-        return str(self.attendant.getfullname)
+        return unicode(self.attendant.getfullname)
 
     def getStatus(self):
-        return str(self.status)
+        return unicode(self.status)

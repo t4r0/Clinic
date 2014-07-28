@@ -1,5 +1,33 @@
 {% extends "base.html" %}
+{% block tittle %}{{user_data.username}}{% endblock %}
 {% block content %}
-{{user.username}}
-{{user.get_full_name}}
+<div class="container">
+	<section class="row">
+		<div class="col-lg-3">
+			<div class="thumbnail">
+      			<img src="{{STATIC_URL}}default.png" alt="{{user_data.username}}">
+      			<div class="caption">
+      				<p> Nombre de usuario: </p>
+      				<h2>{{user_data.username}}</h2>
+      				<p> Miembro desde: </p>
+      				<h3>{{user_data.date_joined |date:"SHORT_DATE_FORMAT" }}</h3>      				
+      			</div>
+			</div>		
+		</div>
+		<div class="col-lg-6">
+			<div class="page-header">
+			<h1><p><span class="glyphicon glyphicon-user"></span> {{user_data.get_full_name | escape}}</p>
+			<p><small>Col. No. {{profile.registration_number}}</small></p></h1>
+			</div>
+			<h2><p><span class="glyphicon glyphicon-bookmark"></span><small> Speciality</small></p>
+			<p>{{profile.speciality}}</p></h2>
+			<h2><p><span class="glyphicon glyphicon-home"></span><small> Address</small></p>
+			<p>{{profile.address}}</p></h2>
+			<h2><p><span class="glyphicon glyphicon-phone"></span><small> Contact Number</small></p>
+			<p>{{profile.telephone}}</p></h2>
+			<h2><p><span class="glyphicon glyphicon-earphone"></span><small> Emergency Number</small></p>
+			<p>{{profile.emergency_phone}}</p></h2>
+		</div>
+	</section>
+</div>
 {% endblock %}

@@ -12,7 +12,7 @@ def main(request):
     user = User()
     user = request.user
     if user.is_authenticated():
-        return render(request, 'profiles/profile.html', {'user':request.user, 'profile':request.user.profile})
+        return render(request, 'appointment/schedule.html', {'user':request.user, 'profile':request.user.profile})
     return render(request, 'inicio.html',{})
 
 def sign_up(request):

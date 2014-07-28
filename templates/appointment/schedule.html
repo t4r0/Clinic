@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block tittle %}Itinerario{% endblock %}
+{% block content %} 
+<div class="container">
+	<section class="row">
+	<div class="col-lg-6 col-lg-offset-3">
+	<div id="schedule">
+		<div>
+			<div class="page-header"> 
+  				<p><h1>Itinerario</h1></p>
+  				<p><h3>citas por venir</h3></p>
+  			</div>
+  			<ul class="view list-group">
+  			</ul>
+		</div>
+		<script type="text/template" id="scheduler">
+		<li class="list-group-item">	
+			<p><a href="/patient/<%= cui%>"><h3><%= patient%></h3></a></p>
+			<p><%= reason%></p>		
+			<p><span class="badge"><%= hour %></span></p>			
+		</li>
+		</script>
+	</div>
+	</div>
+	</section>
+</div>
+<script src="{{STATIC_URL}}Backbone/models/appointments.js"></script>
+<script src="{{STATIC_URL}}Backbone/collections/schedule.js"></script>
+<script src="{{STATIC_URL}}Backbone/views/schedule.js"></script>
+{% endblock %}

@@ -60,4 +60,7 @@ class diagnostic(models.Model):
 
     def __unicode__(self):
         return str(self.id)+str(self.consultation)
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
