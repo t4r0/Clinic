@@ -1,3 +1,4 @@
+
 from django.db import models
 from patient.models import patient
 from appointment.models import appointment
@@ -60,7 +61,5 @@ class diagnostic(models.Model):
 
     def __unicode__(self):
         return str(self.id)+str(self.consultation)
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
+
