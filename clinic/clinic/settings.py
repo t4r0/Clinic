@@ -120,6 +120,7 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_PATH,'templates/js'),
     os.path.join(PROJECT_PATH,'templates/images'), 
     os.path.join(PROJECT_PATH,'templates/js/vendor'),
+    os.path.join(PROJECT_PATH,'templates/fonts'),
 )
 # Profiles configuration
 AUTH_PROFILE_MODULE = 'profiles.Profile'
