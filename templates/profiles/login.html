@@ -1,6 +1,23 @@
- <form method="POST">
- {% csrf_token %}
- {{form}} 
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="/" />
- </form>
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4 col-lg-offset-4">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					Bienvenido
+				</div>
+ 				<form class="input-group" method="POST">
+ 				{% csrf_token %}
+				<input name="username" class ="form-control" type="text" placeholder="Nombre de usuario">
+				{{form.username.errors}}                           
+				<input name="password" class ="form-control" type="password" placeholder="Password">
+				{{form.password.errors}}                              
+				<input type="submit" class ="form-control btn-default" value="Login" />
+				<input type="hidden" name="next" value="/" />
+ 				</form>  						
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ {% endblock %}
