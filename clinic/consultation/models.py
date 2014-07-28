@@ -14,7 +14,7 @@ class consultation(models.Model):
     date = models.DateField()
     observation = models.TextField()
     symptoms = models.TextField()
-    patient = models.ForeingKey(patient)
+    patient = models.ForeignKey(patient)
 
     def getObservation(self):
         return str(self.observation)
@@ -22,6 +22,8 @@ class consultation(models.Model):
     def getSymptoms(self):
         return str(self.symptoms)
     
+    def __unicode__(self):
+        return str(self.id)+str(self.date)
 
 class physicaltest(models.Model):
     size = models.CharField(max_length=25,blank=False)
@@ -43,9 +45,15 @@ class physicaltest(models.Model):
     def getHeartRate(self):
         return str(self.heartrate)
 
+    def __unicode__(self):
+        return str(self.id)+str(self.consultation)
+
 class diagnostic(models.Model):
-    pathology = models.ForeingKey(pathology)
+    pathology = models.ForeignKey(pathology)
     consultation = models.OneToOneField(consultation,related_name='diagnostic')
 
     def getPathology(self):
         return str(self.pathology)
+
+    def __unicode__(self):
+        return str(self.id)+str(self.consultation)

@@ -1,11 +1,17 @@
 {{patient.cui}}
 {{patient.getfullname}}
 {{patient.getStatus}}
-{{patient.getattendant}}
+{% if patient.attendant %}
+    {{patient.getattendant}}
+{% endif %}
 {{patient.date_of_birth}}
 {{patient.adress}}
 {{patient.phone}}
-{{patient.gender}}
+{% if patient.gender = True %}
+    Mujer
+{% else %}
+    Hombre
+{% endif %}
 {{patient.email}}
 {%for consultation in consultation%}
     {{consultation.date}}

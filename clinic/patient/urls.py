@@ -9,7 +9,5 @@ from patient import views
 
 
 urlpatterns = patterns('',
-                       url(r'^patient/(?P<cui>\d+)/$',views.viewProfile),
-                       
-                       #url(r'^signup/$', views.sign_up, name='signup'),
+                       url(r'^(?P<cui>\d+)/$',views.viewProfile),
                        )

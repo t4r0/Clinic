@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name':'profiles/login.html'}, name = 'login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout_then_login'),
     url(r'^$', views.main, name='home'),
-    url(r'^', include('profiles.urls')),
+    url(r'^patient/', include('patient.urls')),
+    url(r'^', include('profiles.urls'))
     )

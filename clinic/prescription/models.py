@@ -14,8 +14,8 @@ class medicine(models.Model):
 class prescription(models.Model):
     date = models.DateField()
     observations=models.TextField()
-    patient=models.ForeingKey(patient)
-    consultation=models.ForeingKey(consultation)
-    medicine=models.ForeingKey(medicine)
+    patient=models.ForeignKey(patient)
+    consultation=models.ForeignKey(consultation)
+    medicine=models.ForeignKey(medicine)
 
     
