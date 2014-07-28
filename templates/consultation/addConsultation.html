@@ -1,0 +1,8 @@
+ <form method="POST">
+ {% csrf_token %}
+ {{form}} 
+<input type="submit" value="Guardar" />
+Fecha: <input type="date" name="date" />
+Sintomas: <input type="text" name="symptoms"/>
+Observations: <input type="text" name="observations"/>
+ </form>

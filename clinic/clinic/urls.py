@@ -13,5 +13,6 @@ urlpatterns = patterns('',
     url(r'^logout/$', 'django.contrib.auth.views.logout_then_login'),
     url(r'^$', views.main, name='home'),
     url(r'^patient/', include('patient.urls')),
+    url(r'^consultation/', include('consultation.urls')),
     url(r'^', include('profiles.urls'))
     )
