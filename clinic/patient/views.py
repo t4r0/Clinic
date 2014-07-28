@@ -20,7 +20,7 @@ def viewProfile(request,cui):
             raise Http404
 
 
-        
+@login_required        
 def addConsultation(request,cui):
     try:
         patient = Patient()
