@@ -5,9 +5,9 @@ Created on 21/07/2014
 '''
 from django.conf.urls import patterns, url
 
-from patient import views
+from consultation import views
 
 
 urlpatterns = patterns('',
-                       url(r'^(?P<cui>\d+)/$',views.viewProfile),
+                       url(r'^(?P<cui>\d+)/$',views.addConsultation),
                        )

@@ -43,6 +43,9 @@ INSTALLED_APPS = (
     'appointment',
     'profiles',
     'patient',
+    'consultation',
+    'prescription',
+    
 )
 
 MIDDLEWARE_CLASSES = (
