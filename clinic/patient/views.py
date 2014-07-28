@@ -21,4 +21,14 @@ def viewProfile(request,cui):
 
 
         
-
+def addConsultation(request,cui):
+    try:
+        patient = Patient()
+        consultation = Consultation()
+        patient = Patient.objects.get(cui=cui)
+        consultation = Consultation.objects.filter(patient=patient).all()        
+        return render_to_response('patients/consultation.html',
+                                  {'patient':patient,'consultation':consultation.order_by('-date')[:10]},
+                                  context_instance=RequestContext(request))
+    except patient.DoesNotExist:
+            raise Http404
