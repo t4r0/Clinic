@@ -14,7 +14,7 @@ class consultation(models.Model):
     date = models.DateField()
     observation = models.TextField()
     symptoms = models.TextField()
-    patient = models.ForeingKey(patient)
+    patient = models.ForeignKey(patient)
     
 
 class physicaltest(models.Model):
@@ -23,8 +23,8 @@ class physicaltest(models.Model):
     pressure = models.CharField(max_length=20,blank=False)
     temperature = models.CharField(max_length=12)
     heartrate = models.CharField(max_length=12)
-    consultation = models.ForeingKey(consultation)
+    consultation = models.ForeignKey(consultation)
 
 class diagnostic(models.Model):
-    pathology = models.ForeingKey(pathology)
-    consultation = models.ForeingKey(consultation)
+    pathology = models.ForeignKey(pathology)
+    consultation = models.ForeignKey(consultation)
