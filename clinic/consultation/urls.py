@@ -1,13 +1,8 @@
-'''
-Created on 21/07/2014
+# Urls para el manejo de consultation
 
-@author: t4r0
-'''
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, include, urls
 
-from consultation import views
+urlpatterns = patterns('', 
+	url(r'^consulta/', 'consultation.views.consultation_view', name='consulta'),
 
-
-urlpatterns = patterns('',
-                       url(r'^(?P<cui>\d+)/$',views.addConsultation),
-                       )
+	)
